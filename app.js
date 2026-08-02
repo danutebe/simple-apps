@@ -4,7 +4,10 @@ const app = express()
 const path = require('path')
 require('dotenv').config();
 
-app.disable('x-powered-by');
+
+app.disable("x-powered-by");
+
+
 // Import Middleware
 const logger = require('./middleware/logger')
 app.use(logger)
@@ -33,7 +36,7 @@ app.get('/users', (req, res, next) => {
 });
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`Example app listening on port ${process.env.APP_PORT}`)
+  console.log(Example app listening on port ${process.env.APP_PORT})
 })
 
 module.exports = app
