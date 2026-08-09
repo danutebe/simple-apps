@@ -26,7 +26,10 @@ pipeline {
                -Dsonar.token=sqp_d5fe520f753c26b2bb2825a0b33a5551f1b54d6d'''
             }}
 
-        stage('Approval'){steps{input message 'Cek Sonarqube Server, jika sudah lanjutkan?' ok: 'Approve' }}    
+        stage('Approval'){steps{input message: 'Cek Sonarqube Server, jika sudah lanjutkan?', 
+            ok: 'Approve' 
+            
+            }}    
         stage('Deploy'){steps{sh 'docker compose up -d --build' }}
     }
 
